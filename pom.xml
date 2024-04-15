@@ -10,7 +10,9 @@
     <version>1.0.0-SNAPSHOT</version>
     <name>wcl-test-examples</name>
     <modules>
+        <module>apitesting</module>
         <module>unittesting</module>
+        <module>webtesting</module>
     </modules>
     <packaging>pom</packaging>
 
@@ -28,9 +30,6 @@
             <plugin>
                 <artifactId>maven-jar-plugin</artifactId>
                 <version>${maven-jar-plugin.version}</version>
-
-
-
             </plugin>
         </plugins>
     </build>
