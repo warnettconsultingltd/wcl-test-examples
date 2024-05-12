@@ -13,7 +13,7 @@ public class TitleTests {
     private static final String TITLE = "Home - BBC News";
 
     @BeforeEach
-    protected void setupWebDriver() {
+    protected  void setupWebDriver() {
         webDriver = BrowserWebDriverFactory.chromeWebDriver();
     }
 

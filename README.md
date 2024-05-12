@@ -20,4 +20,4 @@ The aim of web testing is to check clients - UI elements, integration with API s
 
 ### Selenium
 
-Tests using the Selsnium framework, exploring concepts.
+Tests using the Selenium framework, exploring concepts.
