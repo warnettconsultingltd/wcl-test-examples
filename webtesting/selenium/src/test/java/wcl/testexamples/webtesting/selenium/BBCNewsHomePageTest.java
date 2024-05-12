@@ -7,28 +7,41 @@ import wcl.testexamples.webtesting.selenium.utils.BrowserWebDriverFactory;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-public class TitleTests {
-    private WebDriver webDriver;
+/**
+ * This test checks for the following elements on the BBC News Home page:
+ * - page title.
+ * - BBC Logo - testing for the existence of the logo.
+ */
+public class BBCNewsHomePageTest {
+    private static WebDriver webDriver;
 
     private static final String URL = "https://www.bbc.co.uk/news";
     private static final String TITLE = "Home - BBC News";
 
-    private BBCNewsHomePage homePage;
+    private static BBCNewsHomePage homePage;
 
-    @BeforeEach
-    protected  void setupWebDriver() {
+    @BeforeAll
+    protected static void setupWebDriver() {
         webDriver = BrowserWebDriverFactory.chromeWebDriver();
         webDriver.get(URL);
-        homePage = new BBCNewsHomePage(webDriver);
     }
 
-    @AfterEach
-    protected void closeWebDriver() {
+    @BeforeEach
+    protected void setupTestPage() {
+        homePage = new BBCNewsHomePage(webDriver);
+    }
+    @AfterAll
+    protected static void closeWebDriver() {
         webDriver.quit();
     }
 
     @Test
     public void whenInvokingBBCHomePage_thenTheTitleIsBBC() {
         assertEquals(TITLE, homePage.getTitle());
+    }
+
+    @Test
+    public void whenInvokingBBCHomePage_thenBBCLogoIsPresent() {
+        assertNotNull(homePage.getBBCLogo());
     }
 }
