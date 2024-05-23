@@ -23,7 +23,7 @@ import org.openqa.selenium.support.PageFactory;
  *      xml and not HTML; need to check for the local name of the svg tag.
  *
  */
-public class BBCNewsHomePage {
+public class BBCNewsHomePage implements PageObjectModel {
     private final String title;
     @FindBy(xpath="//*[@id=\"chameleon-global-navigation\"]/div[1]/a/span/*[local-name()='svg']")
     WebElement bbcLogo;
