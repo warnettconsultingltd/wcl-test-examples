@@ -19,6 +19,9 @@ import static org.junit.jupiter.api.Assertions.*;
  *   - BiteSize
  *   - More
  *   - Search
+ * - Content section
+ *   - Header Text
+ *   - content
  */
 public class BBCHomePageTest extends TestBase {
     private static final String URL = "https://www.bbc.co.uk/";
@@ -96,4 +99,15 @@ public class BBCHomePageTest extends TestBase {
     public void whenInvokingBBCHomePage_thenSearchLinkIsPresent() {
         assertNotNull(homePage.getSearchLink());
     }
+
+    @Test
+    public void whenInvokingBBCHomePage_thenContentHeaderTextIsCorrect() {
+        assertEquals("Welcome to the BBC", homePage.getContentHeader());
+    }
+
+    @Test
+    public void whenInvokingBBCHomePage_thenContentIsPresent() {
+        assertNotNull(homePage.getContent());
+    }
+
 }

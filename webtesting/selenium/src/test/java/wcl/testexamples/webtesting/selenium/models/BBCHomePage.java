@@ -59,6 +59,12 @@ public class BBCHomePage implements PageObjectModel {
     @FindBy(xpath="//*[@id=\"chameleon-global-navigation\"]/div[3]/div[2]/a")
     WebElement searchLink;
 
+    @FindBy(xpath="//*[@id=\"header-content\"]/div/div/div/div/div")
+    WebElement contentHeader;
+
+    @FindBy(xpath="//*[@id=\"root\"]/div/div/div[2]")
+    WebElement content;
+
     public BBCHomePage(final WebDriver webDriver) {
         PageFactory.initElements(webDriver, this);
         title = webDriver.getTitle();
@@ -93,4 +99,9 @@ public class BBCHomePage implements PageObjectModel {
     public String getMoreLink() { return moreLink.getText();}
 
     public String getSearchLink() { return searchLink.getText();}
+
+    public String getContentHeader() { return contentHeader.getText();}
+
+    public String getContent() { return content.getText();}
 }
+
